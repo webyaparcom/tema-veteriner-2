@@ -1,0 +1,54 @@
+{
+  "order": false,
+  "user": false,
+  "description": {
+    "tr": "Kumru Veteriner Kliniği: kedi ve köpekler için muayene, aşı takvimi ve kontrol randevuları. Demo site; içerik kurgusaldır.",
+    "en": "Kumru Veterinary Clinic: check-ups, vaccination schedules and follow-up visits for cats and dogs. Demo site; content is fictional.",
+    "ar": "عيادة كومرو البيطرية: فحوص وجداول تطعيم ومواعيد متابعة للقطط والكلاب. موقع تجريبي؛ المحتوى افتراضي."
+  },
+  "keyword": {
+    "tr": "veteriner, kedi aşısı, köpek aşısı, veteriner randevu",
+    "en": "vet, cat vaccine, dog vaccine, vet appointment",
+    "ar": "طبيب بيطري، لقاح القطط، لقاح الكلاب، موعد بيطري"
+  },
+  "category": "Kurumsal",
+  "name": "Kumru Veteriner Kliniği",
+  "domain": "veteriner-2.webyapar.com",
+  "langs": {
+    "tr": true,
+    "en": true,
+    "ar": true,
+    "de": false,
+    "ru": false,
+    "es": false,
+    "fr": false,
+    "it": false,
+    "ja": false,
+    "zh": false,
+    "ko": false,
+    "pt": false
+  },
+  "logo": "logo.png",
+  "multi": false,
+  "publishMode": "static",
+  "font": {
+    "body": "nunito",
+    "heading": "poppins",
+    "ar": {
+      "body": "ibm-plex-sans-arabic",
+      "heading": "noto-kufi-arabic"
+    }
+  },
+  "colorScheme": "auto",
+  "theme_color": "#3D5A80",
+  "seo": {
+    "noindex": true
+  },
+  "cssTokens": {
+    "--mx-radius-sm": "7px",
+    "--mx-radius-md": "12px",
+    "--mx-radius-lg": "17px",
+    "--mx-radius-xl": "23px"
+  },
+  "icon": "icon.png"
+}

@@ -1,0 +1,46 @@
+{
+  "id": "vizyon",
+  "name": {
+    "tr": "Vizyon",
+    "en": "Vision",
+    "ar": "الرؤية"
+  },
+  "description": {
+    "tr": "Vizyonumuz",
+    "en": "Our vision",
+    "ar": "رؤيتنا"
+  },
+  "keyword": {
+    "tr": "Vizyon",
+    "en": "vision, our vision, goals",
+    "ar": "الرؤية, رؤيتنا, الأهداف"
+  },
+  "path": "vizyon",
+  "icon": "visibility",
+  "category": "",
+  "status": "play",
+  "desing": {
+    "header": [],
+    "body": [],
+    "footer": []
+  },
+  "index": 1,
+  "url": "",
+  "text": {
+    "tr": "<h2>Vizyonumuz</h2>\n<p>Mahallenin aşı ve kontrol takvimini güvenle emanet ettiği klinik olmak.</p>",
+    "en": "<h2>Our vision</h2>\n<p>To be the clinic the neighbourhood trusts with its vaccination and check-up schedules.</p>",
+    "ar": "<h2>رؤيتنا</h2>\n<p>أن نكون العيادة التي يثق بها الحيّ في جداول التطعيم والمتابعة.</p>"
+  },
+  "title": {
+    "tr": "Vizyon",
+    "en": "Vision",
+    "ar": "الرؤية"
+  },
+  "date": "2026-11-16T11:43:51.274Z",
+  "update": "2026-11-16T11:47:24.849Z",
+  "sablonIzi": "c3ebee5f049bdfb4",
+  "sablonIziDil": {
+    "en": "67bb554c6c4d5984",
+    "ar": "7e4e23377d70548a"
+  }
+}

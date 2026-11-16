@@ -1,0 +1,40 @@
+{
+  "id": "3ogy4ba63o",
+  "name": {
+    "tr": "Randevu",
+    "en": "Appointment",
+    "ar": "موعد"
+  },
+  "description": {
+    "tr": "Randevu talep formu (demo).",
+    "en": "Appointment request form (demo).",
+    "ar": "نموذج طلب موعد (تجريبي)."
+  },
+  "keyword": {
+    "tr": "veteriner randevu",
+    "en": "vet appointment",
+    "ar": "موعد بيطري"
+  },
+  "path": "teklif-al",
+  "icon": "request_quote",
+  "category": "",
+  "status": "play",
+  "desing": {
+    "header": [],
+    "body": [
+      "iytrtb",
+      "dsi5c5"
+    ],
+    "footer": []
+  },
+  "index": 4,
+  "url": "",
+  "text": {},
+  "title": {
+    "tr": "Randevu",
+    "en": "Appointment",
+    "ar": "موعد"
+  },
+  "date": "2026-11-16T11:43:51.420Z",
+  "update": "2026-11-16T11:47:24.841Z"
+}

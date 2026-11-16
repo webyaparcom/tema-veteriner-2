@@ -1,0 +1,165 @@
+{
+  "data": [
+    {
+      "id": "o6cwp71s4k",
+      "name": {
+        "tr": "Hizmetlerimiz",
+        "en": "Our services",
+        "ar": "خدماتنا"
+      },
+      "description": {
+        "tr": "Her hayvan muayeneyle değerlendirilir; aşağıdaki başlıklar genel bilgilendirme içindir.",
+        "en": "Every animal is assessed by examination; the headings below are general information.",
+        "ar": "يُقيَّم كل حيوان بالفحص؛ والعناوين أدناه للمعلومات العامة."
+      },
+      "path": "hizmetler",
+      "icon": "work",
+      "category": "",
+      "status": "play",
+      "desing": {
+        "header": [],
+        "body": [
+          "4rzso1",
+          "iytrtb"
+        ],
+        "footer": []
+      },
+      "index": 0
+    },
+    {
+      "name": {
+        "tr": "Kliniğimiz",
+        "en": "Our clinic",
+        "ar": "عيادتنا"
+      },
+      "status": "play",
+      "id": "hakkimizda",
+      "path": "hakkimizda",
+      "category": "",
+      "url": "",
+      "index": 1,
+      "icon": "info",
+      "desing": {
+        "header": [],
+        "body": [
+          "4dku6r",
+          "91ax0h"
+        ],
+        "footer": []
+      },
+      "pathnext": "",
+      "description": {
+        "tr": "Klinik alanlarımız ve örnek ziyaretler (kurgusal).",
+        "en": "Our clinic areas and sample visits (fictional).",
+        "ar": "مرافق عيادتنا وزيارات نموذجية (افتراضية)."
+      }
+    },
+    {
+      "id": "kz3bkk0q0h",
+      "name": {
+        "tr": "Veteriner hekimler",
+        "en": "Our vets",
+        "ar": "الأطباء البيطريون"
+      },
+      "description": {
+        "tr": "Sizi karşılayan çalışanlarımız.",
+        "en": "The staff who welcomes you.",
+        "ar": "الموظفون الذين يستقبلونكم."
+      },
+      "path": "ekip",
+      "icon": "groups",
+      "category": "hakkimizda",
+      "status": "play",
+      "desing": {
+        "header": [],
+        "body": [
+          "kibr19",
+          "iytrtb"
+        ],
+        "footer": []
+      },
+      "index": 2
+    },
+    {
+      "id": "ttlg0qwjnh",
+      "name": {
+        "tr": "Ziyaret rehberi",
+        "en": "Visit guide",
+        "ar": "دليل الزيارة"
+      },
+      "description": {
+        "tr": "Merak edilenler ve kısa yanıtlar.",
+        "en": "Common questions and short answers.",
+        "ar": "أسئلة متكررة وإجابات موجزة."
+      },
+      "path": "sorular",
+      "icon": "help",
+      "category": "",
+      "status": "play",
+      "desing": {
+        "header": [],
+        "body": [
+          "fmsgqi",
+          "iytrtb"
+        ],
+        "footer": []
+      },
+      "index": 3
+    },
+    {
+      "id": "3ogy4ba63o",
+      "name": {
+        "tr": "Randevu",
+        "en": "Appointment",
+        "ar": "موعد"
+      },
+      "description": {
+        "tr": "Randevu talep formu (demo).",
+        "en": "Appointment request form (demo).",
+        "ar": "نموذج طلب موعد (تجريبي)."
+      },
+      "path": "teklif-al",
+      "icon": "request_quote",
+      "category": "",
+      "status": "play",
+      "desing": {
+        "header": [],
+        "body": [
+          "iytrtb",
+          "dsi5c5"
+        ],
+        "footer": []
+      },
+      "index": 4
+    },
+    {
+      "name": {
+        "tr": "İletişim",
+        "en": "Contact",
+        "ar": "اتصل بنا"
+      },
+      "status": "play",
+      "id": "iletisim",
+      "path": "iletisim",
+      "category": "",
+      "url": "",
+      "index": 5,
+      "icon": "call",
+      "desing": {
+        "header": [],
+        "body": [
+          "dsi5c5",
+          "k8mp01"
+        ],
+        "footer": []
+      },
+      "pathnext": "",
+      "description": {
+        "tr": "Adres, telefon ve çalışma saatleri.",
+        "en": "Address, phone and opening hours.",
+        "ar": "العنوان والهاتف وساعات العمل."
+      }
+    }
+  ],
+  "desc": []
+}
