@@ -1,0 +1,55 @@
+{
+  "name": "Ekip İkinci Yüz — köşeden açılan perdeyle «mesai dışı» hâli",
+  "description": "Kare portre kartının köşesinde ilgi simgeli yuvarlak düğme; üzerine gelince ya da dokununca düğmenin olduğu köşeden daire biçiminde büyüyen bir perde portreyi örter: ikinci fotoğraf (evcil hayvanı, hobisi) ya da büyük simge ve «ilgi» metni. JS yoksa perde portrenin altında okunur. Katman açma (clip-path daire) ile ikinci yüz: ekip-cevrilen-kart'ın 3B çevirmesinden ve arkadaki tanıtım/iletişimden farklı olarak portre yerinde kalır, köşeden kişinin mesai dışı hâli (sevdiği hayvan, ilgi alanı, ikinci foto) açılır; düğme aria-pressed ile dokunmatikte de çalışır. Metinler dil sözlüğü, renkler desing + var(--mx-site-*), mantıksal CSS → RTL. Veri yoksa blok basılmaz.",
+  "version": "1.0.0",
+  "icon": "pets",
+  "category": "team",
+  "subCategory": "circle-reveal",
+  "tags": [
+    "team",
+    "circle-reveal",
+    "second-face",
+    "playful",
+    "interactive",
+    "rtl",
+    "fabrika"
+  ],
+  "desing": {
+    "max": "1200px",
+    "bosluk": "clamp(56px, 8vw, 104px)",
+    "yuvarlak": "18px",
+    "ust": "",
+    "baslik": "",
+    "metin": "",
+    "bg": "var(--mx-site-primary, #2563eb)",
+    "text": "var(--mx-site-primary-contrast, #ffffff)",
+    "muted": "color-mix(in srgb, var(--mx-site-primary-contrast, #ffffff) 92%, var(--mx-site-primary, #2563eb))",
+    "kartBg": "color-mix(in srgb, var(--mx-site-primary-contrast, #ffffff) 10%, transparent)",
+    "cizgi": "color-mix(in srgb, var(--mx-site-primary-contrast, #ffffff) 28%, transparent)",
+    "accent": "var(--mx-site-primary-contrast, #ffffff)",
+    "accentInk": "var(--mx-site-primary-contrast, #ffffff)",
+    "accentText": "var(--mx-site-primary, #2563eb)",
+    "vurguBg": "var(--mx-site-primary-contrast, #ffffff)",
+    "vurguText": "var(--mx-site-primary, #2563eb)",
+    "ilgiEtiket": "",
+    "bgcolor": "var(--mx-site-primary, #2563eb)",
+    "color": "var(--mx-site-primary-contrast, #ffffff)"
+  },
+  "data": [],
+  "veri": {
+    "statik": true,
+    "dinamik": false,
+    "kaynak": "data",
+    "alanlar": {
+      "ad": "ad soyad (zorunlu; düz metin ya da dil sözlüğü)",
+      "unvan": "görev / unvan (dil sözlüğü)",
+      "metin": "kısa tanıtım (dil sözlüğü)",
+      "img": "portre görseli (yoksa baş harfler)",
+      "bolum": "bölüm (dil sözlüğü ya da desing.departments id'si)",
+      "eposta": "e-posta (mailto)",
+      "telefon": "telefon (tel:)",
+      "url": "profil sayfası bağlantısı",
+      "social": "[{ ad, url (http(s)/mailto/tel), ikon (Material Symbols) }]"
+    }
+  }
+}

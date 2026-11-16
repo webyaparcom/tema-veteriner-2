@@ -1,0 +1,54 @@
+{
+  "name": "SSS Ziyaret Aşamaları — öncesi · sırası · sonrası adımlı sekmeler",
+  "description": "Sorular `kategori` alanına göre ziyaret aşamalarına ayrılır (ör. öncesi · muayenede · sonrası); üstte çizgiyle bağlı numaralı aşama daireleri, seçilen aşamanın panelinde onay ikonlu iki sütun soru-cevap ve «sonraki aşama» düğmesi. Tek aşamada adımlar basılmaz. sss-ana-detay dikey soru sekmeleri, sss-cip-filtre hap çiplerle grup seçer; bu modül yatay süreç adımcısı (stepper) — aşama daireleri bir yol çizgisiyle bağlı, geçilen aşamalar işaretli ve yol dolar; panel içi cevaplar akordeonsuz. Metinler dil sözlüğü, renkler desing + var(--mx-site-*), mantıksal CSS → RTL. Açılırlar yerel <details> (JS'siz). Veri yoksa blok basılmaz.",
+  "version": "1.0.0",
+  "icon": "pets",
+  "category": "faq",
+  "subCategory": "stage-stepper",
+  "tags": [
+    "faq",
+    "stepper",
+    "stages",
+    "tabs",
+    "interactive",
+    "rtl",
+    "fabrika"
+  ],
+  "desing": {
+    "max": "1200px",
+    "bosluk": "clamp(56px, 8vw, 104px)",
+    "yuvarlak": "18px",
+    "ust": "",
+    "baslik": "",
+    "metin": "",
+    "tekAcik": "",
+    "ilkAcik": "",
+    "cta_ad": "",
+    "cta_url": "",
+    "bg": "var(--mx-site-surface, #f6f7f9)",
+    "text": "var(--mx-site-text, #111318)",
+    "muted": "color-mix(in srgb, var(--mx-site-text, #111318) 70%, var(--mx-site-surface, #f6f7f9))",
+    "kartBg": "var(--mx-site-bg, #ffffff)",
+    "cizgi": "color-mix(in srgb, var(--mx-site-text, #111318) 12%, transparent)",
+    "accent": "var(--mx-site-primary, #2563eb)",
+    "accentInk": "color-mix(in srgb, var(--mx-site-primary, #2563eb) 70%, var(--mx-site-text, #111318))",
+    "accentText": "var(--mx-site-primary-contrast, #ffffff)",
+    "vurguBg": "var(--mx-site-primary, #2563eb)",
+    "vurguText": "var(--mx-site-primary-contrast, #ffffff)",
+    "bgcolor": "var(--mx-site-surface, #f6f7f9)",
+    "color": "var(--mx-site-text, #111318)"
+  },
+  "data": [],
+  "veri": {
+    "statik": true,
+    "dinamik": false,
+    "kaynak": "data",
+    "alanlar": {
+      "soru": "dil sözlüğü (zorunlu; eski `question`)",
+      "cevap": "dil sözlüğü (eski `answer`)",
+      "kategori": "grup adı, dil sözlüğü (gruplayan yerleşimde)",
+      "ikon": "Material Symbols adı (destekleyen yerleşimde)",
+      "url": "«Devamı» bağlantısı (iç slug ya da tam URL)"
+    }
+  }
+}

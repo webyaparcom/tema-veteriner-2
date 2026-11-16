@@ -1,0 +1,47 @@
+{
+  "name": {
+    "tr": "Kliniğimiz",
+    "en": "Our clinic",
+    "ar": "عيادتنا"
+  },
+  "status": "play",
+  "category": "",
+  "id": "hakkimizda",
+  "url": "",
+  "path": "hakkimizda",
+  "index": 1,
+  "icon": "info",
+  "desing": {
+    "header": [],
+    "body": [
+      "4dku6r",
+      "91ax0h"
+    ],
+    "footer": []
+  },
+  "pathnext": "",
+  "description": {
+    "tr": "Klinik alanlarımız ve örnek ziyaretler (kurgusal).",
+    "en": "Our clinic areas and sample visits (fictional).",
+    "ar": "مرافق عيادتنا وزيارات نموذجية (افتراضية)."
+  },
+  "spot": {
+    "tr": "",
+    "en": "",
+    "ar": ""
+  },
+  "desc": {},
+  "title": {
+    "tr": "Kliniğimiz",
+    "en": "Our clinic",
+    "ar": "عيادتنا"
+  },
+  "keyword": {
+    "tr": "hakkımızda",
+    "en": "about",
+    "ar": "من نحن"
+  },
+  "text": {},
+  "update": "2026-11-16T11:47:24.831Z",
+  "date": "2026-10-30"
+}

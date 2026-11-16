@@ -1,0 +1,116 @@
+<section class="modulex-ekip-ikinci-yuz{{fbsinif}}" {{fbetiket}}>
+  <div class="modulex-ekip-ikinci-yuz-ic">
+    {{fbbas}}
+    {{fbgovde}}
+  </div>
+</section>
+
+<style>
+  /* ekip-ikinci-yuz — Katman açma (clip-path daire) ile ikinci yüz: ekip-cevrilen-kart'ın 3B çevirmesinden ve arkadaki tanıtım/iletişimden farklı olarak portre yerinde kalır, köşeden kişinin mesai dışı hâli (sevdiği hayvan, ilgi alanı, ikinci foto) açılır; düğme aria-pressed ile dokunmatikte de çalışır. */
+  .modulex-ekip-ikinci-yuz { box-sizing: border-box; width: 100%; padding: --bosluk-- 20px; background: --bg--; color: --text--; font-size: 1rem; line-height: 1.6; font-family: var(--mx-font-sans, inherit); overflow-wrap: break-word; }
+  .modulex-ekip-ikinci-yuz *, .modulex-ekip-ikinci-yuz *::before, .modulex-ekip-ikinci-yuz *::after { box-sizing: border-box; }
+  /* ham/css.css «* { font-size: 14px }» kalıtımı keser — modül içinde boyut üstten gelsin (ikon yazı tipi hariç) */
+  .modulex-ekip-ikinci-yuz :where(*:not(.material-symbols-outlined)) { font-size: inherit; }
+  /* aynı «*» kuralı font-weight 400 · line-height 1.2 · font-family de basar — modül içinde kalıtım */
+  .modulex-ekip-ikinci-yuz :where(*:not(.material-symbols-outlined)) { font-weight: inherit; line-height: inherit; font-family: inherit; }
+  .modulex-ekip-ikinci-yuz :where(h2, h3, h4, p, ul, ol, li, figure, blockquote, dl, dd) { margin: 0; }
+  .modulex-ekip-ikinci-yuz :where(ul, ol) { padding: 0; list-style: none; }
+  .modulex-ekip-ikinci-yuz img { display: block; max-width: 100%; }
+  /* <img width height> öznitelik yüksekliği CSS aspect-ratio'yu ezer — sıfır özgüllükle auto (modül sınıfının height'ı yine kazanır) */
+  :where(.modulex-ekip-ikinci-yuz) img { height: auto; }
+  .modulex-ekip-ikinci-yuz [hidden] { display: none !important; }
+  .modulex-ekip-ikinci-yuz :where(a, button, summary, [data-cevir]) { cursor: pointer; }
+  .modulex-ekip-ikinci-yuz :where(a, button, summary, [tabindex]):focus-visible { outline: 3px solid --accent--; outline-offset: 3px; }
+  .modulex-ekip-ikinci-yuz-ic { max-width: --max--; margin-inline: auto; }
+  .modulex-ekip-ikinci-yuz-bas { display: grid; gap: 12px; margin-block-end: clamp(32px, 4vw, 52px); }
+  .modulex-ekip-ikinci-yuz--bassiz .modulex-ekip-ikinci-yuz-bas { display: none; }
+  .modulex-ekip-ikinci-yuz-ust { color: --accentInk--; font-size: 0.8rem; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; }
+  .modulex-ekip-ikinci-yuz-baslik { font-family: var(--mx-font-heading, inherit); font-size: clamp(1.8rem, 3.4vw, 2.8rem); font-weight: 750; letter-spacing: -0.025em; line-height: 1.1; }
+  .modulex-ekip-ikinci-yuz-metin { color: --muted--; font-size: 1.05rem; line-height: 1.7; }
+  .modulex-ekip-ikinci-yuz-bas { max-width: 780px; margin-inline: auto; text-align: center; justify-items: center; }
+  .modulex-ekip-ikinci-yuz-cta { display: flex; flex-wrap: wrap; gap: 12px; margin-block-start: 8px; }
+  .modulex-ekip-ikinci-yuz-dugme { display: inline-flex; align-items: center; gap: 8px; min-height: 48px; padding: 12px 22px; border: 2px solid --accent--; border-radius: 999px; background: --accent--; color: --accentText--; font-weight: 700; text-decoration: none; transition: transform 0.25s ease, background 0.25s ease, color 0.25s ease; }
+  .modulex-ekip-ikinci-yuz-dugme:hover { transform: translateY(-2px); }
+  .modulex-ekip-ikinci-yuz-dugme--ikincil { background: transparent; color: --text--; border-color: --cizgi--; }
+  .modulex-ekip-ikinci-yuz-dugme--ikincil:hover { border-color: --accent--; }
+  .modulex-ekip-ikinci-yuz-dugme .material-symbols-outlined { font-size: 20px; }
+
+  .modulex-ekip-ikinci-yuz-yuzler { display: grid; grid-template-columns: repeat(auto-fill, minmax(min(100%, 240px), 1fr)); gap: 30px 24px; }
+  .modulex-ekip-ikinci-yuz-kart { display: grid; align-content: start; gap: 14px; }
+  .modulex-ekip-ikinci-yuz-sahne { position: relative; display: grid; overflow: hidden; border-radius: --yuvarlak--; background: --kartBg--; }
+  .modulex-ekip-ikinci-yuz-foto { grid-area: 1 / 1; width: 100%; aspect-ratio: 1; object-fit: cover; font-size: 3rem; }
+  .modulex-ekip-ikinci-yuz-perde { grid-area: 1 / 1; z-index: 1; display: grid; place-content: center; justify-items: center; gap: 12px; padding: 22px; background: --bg--; color: --text--; text-align: center; clip-path: circle(0 at calc(100% - 34px) calc(100% - 34px)); transition: clip-path 0.65s cubic-bezier(0.2, 0.8, 0.2, 1); }
+  [dir="rtl"] .modulex-ekip-ikinci-yuz-perde { clip-path: circle(0 at 34px calc(100% - 34px)); }
+  .modulex-ekip-ikinci-yuz-kart--acik .modulex-ekip-ikinci-yuz-perde, [dir="rtl"] .modulex-ekip-ikinci-yuz-kart--acik .modulex-ekip-ikinci-yuz-perde { clip-path: circle(150% at 50% 50%); }
+  @media (hover: hover) {
+    .modulex-ekip-ikinci-yuz-sahne:hover .modulex-ekip-ikinci-yuz-perde, [dir="rtl"] .modulex-ekip-ikinci-yuz-sahne:hover .modulex-ekip-ikinci-yuz-perde { clip-path: circle(150% at 50% 50%); }
+  }
+  .modulex-ekip-ikinci-yuz-perde:has(.modulex-ekip-ikinci-yuz-foto2) { padding: 0; place-content: stretch; }
+  .modulex-ekip-ikinci-yuz-foto2 { grid-area: 1 / 1; width: 100%; height: 100%; object-fit: cover; }
+  .modulex-ekip-ikinci-yuz-perde:has(.modulex-ekip-ikinci-yuz-foto2) .modulex-ekip-ikinci-yuz-ilgi { grid-area: 1 / 1; align-self: end; margin: 12px; padding: 8px 12px; border-radius: 10px; background: color-mix(in srgb, --bg-- 88%, transparent); }
+  .modulex-ekip-ikinci-yuz-dev { color: --accentInk--; font-size: 64px; }
+  .modulex-ekip-ikinci-yuz-ilgi { font-family: var(--mx-font-heading, inherit); font-size: 1.05rem; font-weight: 650; line-height: 1.45; }
+  .modulex-ekip-ikinci-yuz-tetik { position: absolute; z-index: 2; inset-block-end: 12px; inset-inline-end: 12px; display: grid; place-items: center; width: 44px; height: 44px; border: 2px solid color-mix(in srgb, --vurguText-- 30%, transparent); border-radius: 50%; background: --vurguBg--; color: --vurguText--; box-shadow: 0 8px 18px -8px color-mix(in srgb, --text-- 70%, transparent); transition: transform 0.35s ease; }
+  .modulex-ekip-ikinci-yuz-tetik:hover { transform: scale(1.1); }
+  .modulex-ekip-ikinci-yuz-tetik[aria-pressed="true"] { transform: rotate(-12deg) scale(1.08); }
+  .modulex-ekip-ikinci-yuz-tetik .material-symbols-outlined { font-size: 22px; }
+  .modulex-ekip-ikinci-yuz-alt { display: grid; gap: 2px; text-align: center; }
+  .modulex-ekip-ikinci-yuz-unvan { color: inherit; }
+  .modulex-ekip-ikinci-yuz:not(.modulex-ekip-ikinci-yuz--js) .modulex-ekip-ikinci-yuz-tetik { display: none; }
+  .modulex-ekip-ikinci-yuz:not(.modulex-ekip-ikinci-yuz--js) .modulex-ekip-ikinci-yuz-perde { grid-area: auto; clip-path: none; padding: 14px 16px; }
+  .modulex-ekip-ikinci-yuz:not(.modulex-ekip-ikinci-yuz--js) .modulex-ekip-ikinci-yuz-foto2 { grid-area: auto; height: auto; aspect-ratio: 16 / 9; }
+  @media (max-width: 768px) {
+    .modulex-ekip-ikinci-yuz-yuzler { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 20px 12px; }
+    .modulex-ekip-ikinci-yuz-tetik { width: 38px; height: 38px; inset-block-end: 8px; inset-inline-end: 8px; }
+    .modulex-ekip-ikinci-yuz-dev { font-size: 44px; }
+    .modulex-ekip-ikinci-yuz-ilgi { font-size: 0.88rem; }
+    .modulex-ekip-ikinci-yuz-perde { padding: 12px; }
+    .modulex-ekip-ikinci-yuz-ad { font-size: 1rem; }
+  }
+  /* img width/height öznitelikleri CSS yüksekliği olur — aspect-ratio'nun çalışması için yükseklik auto (modül kuralı ezebilir) */
+  :where(.modulex-ekip-ikinci-yuz) img { height: auto; }
+  .modulex-ekip-ikinci-yuz-foto { min-width: 0; }
+  .modulex-ekip-ikinci-yuz-bag { color: inherit; text-decoration: none; }
+  .modulex-ekip-ikinci-yuz-bag:hover { text-decoration: underline; text-underline-offset: 4px; }
+  .modulex-ekip-ikinci-yuz-harf { display: grid; place-items: center; background-color: --vurguBg--; color: --vurguText--; font-weight: 800; letter-spacing: 0.02em; }
+  .modulex-ekip-ikinci-yuz-sosyal { display: flex; flex-wrap: wrap; gap: 8px; }
+  .modulex-ekip-ikinci-yuz-slink { display: inline-flex; align-items: center; justify-content: center; gap: 6px; min-width: 40px; min-height: 40px; padding: 0 10px; border: 1px solid --cizgi--; border-radius: 999px; color: inherit; font-size: 0.88rem; text-decoration: none; transition: background-color 0.25s ease, color 0.25s ease, border-color 0.25s ease; }
+  .modulex-ekip-ikinci-yuz-slink:hover { background-color: --accent--; border-color: --accent--; color: --accentText--; }
+  .modulex-ekip-ikinci-yuz-slink .material-symbols-outlined { font-size: 19px; }
+  .modulex-ekip-ikinci-yuz-syazi { overflow-wrap: anywhere; }
+  .modulex-ekip-ikinci-yuz-ad { font-size: 1.12rem; font-weight: 750; line-height: 1.3; }
+  .modulex-ekip-ikinci-yuz-unvan { color: --accentInk--; font-size: 0.92rem; font-weight: 650; }
+  .modulex-ekip-ikinci-yuz-bio { color: --muted--; font-size: 0.95rem; line-height: 1.65; }
+  .modulex-ekip-ikinci-yuz-bolum { color: --muted--; font-size: 0.78rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; }
+
+  :is([lang="ar"], [lang="fa"], [lang="he"], [lang="ur"]) .modulex-ekip-ikinci-yuz :is(.modulex-ekip-ikinci-yuz-baslik, .modulex-ekip-ikinci-yuz-ust, h3, h4, strong) { letter-spacing: 0; }
+  :is([lang="ar"], [lang="fa"], [lang="he"], [lang="ur"]) .modulex-ekip-ikinci-yuz-baslik { line-height: 1.35; }
+  @media (max-width: 768px) {
+    .modulex-ekip-ikinci-yuz { padding-inline: 16px; }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .modulex-ekip-ikinci-yuz *, .modulex-ekip-ikinci-yuz *::before, .modulex-ekip-ikinci-yuz *::after { animation: none !important; transition: none !important; }
+  }
+</style>
+<script>
+  (() => {
+    const P = "modulex-ekip-ikinci-yuz";
+    const az = !!(window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches);
+    const ikinciYuz = (s, P) => {
+        const t = [...s.querySelectorAll("[data-yuz]")];
+        if (!t.length) return;
+        s.classList.add(P + "--js");
+        t.forEach((b) => {
+          const kart = b.closest("." + P + "-kart");
+          const ayarla = (a) => { b.setAttribute("aria-pressed", String(a)); if (kart) kart.classList.toggle(P + "-kart--acik", a); };
+          b.addEventListener("click", () => ayarla(b.getAttribute("aria-pressed") !== "true"));
+          b.addEventListener("keydown", (e) => { if (e.key === "Escape") ayarla(false); });
+        });
+      };
+    document.querySelectorAll("." + P).forEach((s) => {
+      if (s.dataset.fbHazir) return;
+      s.dataset.fbHazir = "1";
+      ikinciYuz(s, P, az);
+    });
+  })();
+</script>

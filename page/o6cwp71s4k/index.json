@@ -1,0 +1,40 @@
+{
+  "id": "o6cwp71s4k",
+  "name": {
+    "tr": "Hizmetlerimiz",
+    "en": "Our services",
+    "ar": "خدماتنا"
+  },
+  "description": {
+    "tr": "Her hayvan muayeneyle değerlendirilir; aşağıdaki başlıklar genel bilgilendirme içindir.",
+    "en": "Every animal is assessed by examination; the headings below are general information.",
+    "ar": "يُقيَّم كل حيوان بالفحص؛ والعناوين أدناه للمعلومات العامة."
+  },
+  "keyword": {
+    "tr": "Hizmetler",
+    "en": "Services",
+    "ar": "الخدمات"
+  },
+  "path": "hizmetler",
+  "icon": "work",
+  "category": "",
+  "status": "play",
+  "desing": {
+    "header": [],
+    "body": [
+      "4rzso1",
+      "iytrtb"
+    ],
+    "footer": []
+  },
+  "index": 0,
+  "url": "",
+  "text": {},
+  "title": {
+    "tr": "Hizmetlerimiz",
+    "en": "Our services",
+    "ar": "خدماتنا"
+  },
+  "date": "2026-11-16T11:43:51.401Z",
+  "update": "2026-11-16T11:47:24.828Z"
+}

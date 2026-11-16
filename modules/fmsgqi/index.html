@@ -1,0 +1,123 @@
+<section class="modulex-sss-ziyaret-asama{{fbsinif}}" {{fbetiket}}>
+  <div class="modulex-sss-ziyaret-asama-ic">
+    {{fbbas}}
+    {{fbgovde}}
+  </div>
+</section>
+
+<style>
+  /* sss-ziyaret-asama — sss-ana-detay dikey soru sekmeleri, sss-cip-filtre hap çiplerle grup seçer; bu modül yatay süreç adımcısı (stepper) — aşama daireleri bir yol çizgisiyle bağlı, geçilen aşamalar işaretli ve yol dolar; panel içi cevaplar akordeonsuz. */
+  .modulex-sss-ziyaret-asama { box-sizing: border-box; width: 100%; padding: --bosluk-- 20px; background: --bg--; color: --text--; font-size: 1rem; line-height: 1.6; font-family: var(--mx-font-sans, inherit); overflow-wrap: break-word; }
+  .modulex-sss-ziyaret-asama *, .modulex-sss-ziyaret-asama *::before, .modulex-sss-ziyaret-asama *::after { box-sizing: border-box; }
+  /* ham/css.css «* { font-size: 14px }» kalıtımı keser — modül içinde boyut üstten gelsin (ikon yazı tipi hariç) */
+  .modulex-sss-ziyaret-asama :where(*:not(.material-symbols-outlined)) { font-size: inherit; }
+  /* aynı «*» kuralı font-weight 400 · line-height 1.2 · font-family de basar — modül içinde kalıtım */
+  .modulex-sss-ziyaret-asama :where(*:not(.material-symbols-outlined)) { font-weight: inherit; line-height: inherit; font-family: inherit; }
+  .modulex-sss-ziyaret-asama :where(h2, h3, h4, p, ul, ol, li, figure, blockquote, dl, dd) { margin: 0; }
+  .modulex-sss-ziyaret-asama :where(ul, ol) { padding: 0; list-style: none; }
+  .modulex-sss-ziyaret-asama img { display: block; max-width: 100%; }
+  /* <img width height> öznitelik yüksekliği CSS aspect-ratio'yu ezer — sıfır özgüllükle auto (modül sınıfının height'ı yine kazanır) */
+  :where(.modulex-sss-ziyaret-asama) img { height: auto; }
+  .modulex-sss-ziyaret-asama [hidden] { display: none !important; }
+  .modulex-sss-ziyaret-asama :where(a, button, summary, [data-cevir]) { cursor: pointer; }
+  .modulex-sss-ziyaret-asama :where(a, button, summary, [tabindex]):focus-visible { outline: 3px solid --accent--; outline-offset: 3px; }
+  .modulex-sss-ziyaret-asama-ic { max-width: --max--; margin-inline: auto; }
+  .modulex-sss-ziyaret-asama-bas { display: grid; gap: 12px; margin-block-end: clamp(32px, 4vw, 52px); }
+  .modulex-sss-ziyaret-asama--bassiz .modulex-sss-ziyaret-asama-bas { display: none; }
+  .modulex-sss-ziyaret-asama-ust { color: --accentInk--; font-size: 0.8rem; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; }
+  .modulex-sss-ziyaret-asama-baslik { font-family: var(--mx-font-heading, inherit); font-size: clamp(1.8rem, 3.4vw, 2.8rem); font-weight: 750; letter-spacing: -0.025em; line-height: 1.1; }
+  .modulex-sss-ziyaret-asama-metin { color: --muted--; font-size: 1.05rem; line-height: 1.7; }
+  .modulex-sss-ziyaret-asama-bas { max-width: 780px; margin-inline: auto; text-align: center; justify-items: center; }
+  .modulex-sss-ziyaret-asama-cta { display: flex; flex-wrap: wrap; gap: 12px; margin-block-start: 8px; }
+  .modulex-sss-ziyaret-asama-dugme { display: inline-flex; align-items: center; gap: 8px; min-height: 48px; padding: 12px 22px; border: 2px solid --accent--; border-radius: 999px; background: --accent--; color: --accentText--; font-weight: 700; text-decoration: none; transition: transform 0.25s ease, background 0.25s ease, color 0.25s ease; }
+  .modulex-sss-ziyaret-asama-dugme:hover { transform: translateY(-2px); }
+  .modulex-sss-ziyaret-asama-dugme--ikincil { background: transparent; color: --text--; border-color: --cizgi--; }
+  .modulex-sss-ziyaret-asama-dugme--ikincil:hover { border-color: --accent--; }
+  .modulex-sss-ziyaret-asama-dugme .material-symbols-outlined { font-size: 20px; }
+
+  .modulex-sss-ziyaret-asama-adimlar { position: relative; display: grid; grid-auto-flow: column; grid-auto-columns: minmax(0, 1fr); gap: 12px; margin-block-end: 30px; }
+  .modulex-sss-ziyaret-asama:not(.modulex-sss-ziyaret-asama--ajs) .modulex-sss-ziyaret-asama-adimlar { display: none; }
+  .modulex-sss-ziyaret-asama-adimlar::before, .modulex-sss-ziyaret-asama-adimlar::after { content: ""; position: absolute; inset-block-start: 25px; height: 3px; border-radius: 3px; }
+  .modulex-sss-ziyaret-asama-adimlar::before { inset-inline: 14%; background: --cizgi--; }
+  .modulex-sss-ziyaret-asama-adimlar::after { inset-inline-start: 14%; width: calc(72% * var(--asama, 0)); background: --accent--; transition: width 0.5s ease; }
+  .modulex-sss-ziyaret-asama-adim { position: relative; z-index: 1; display: grid; justify-items: center; gap: 6px; padding: 0 4px; border: 0; background: none; color: --text--; font: inherit; text-align: center; }
+  .modulex-sss-ziyaret-asama-daire { display: grid; place-items: center; width: 52px; height: 52px; border: 3px solid --cizgi--; border-radius: 50%; background: --bg--; font-size: 1.15rem; font-weight: 800; font-variant-numeric: tabular-nums; transition: background-color 0.3s ease, border-color 0.3s ease, color 0.3s ease, transform 0.3s ease; }
+  .modulex-sss-ziyaret-asama-adim:hover .modulex-sss-ziyaret-asama-daire { border-color: --accent--; }
+  .modulex-sss-ziyaret-asama-adim.modulex-sss-ziyaret-asama--gecti .modulex-sss-ziyaret-asama-daire { border-color: --accent--; color: --accentInk--; }
+  .modulex-sss-ziyaret-asama-adim[aria-selected="true"] .modulex-sss-ziyaret-asama-daire { border-color: --accent--; background: --accent--; color: --accentText--; transform: scale(1.1); }
+  .modulex-sss-ziyaret-asama-aad { font-weight: 750; line-height: 1.3; }
+  .modulex-sss-ziyaret-asama-asay { color: --muted--; font-size: 0.8rem; font-weight: 700; font-variant-numeric: tabular-nums; }
+  .modulex-sss-ziyaret-asama-paneller { display: grid; gap: 20px; }
+  .modulex-sss-ziyaret-asama-panel { display: grid; gap: 22px; padding: clamp(22px, 3vw, 38px); border-radius: --yuvarlak--; background: --kartBg--; }
+  .modulex-sss-ziyaret-asama--ajs .modulex-sss-ziyaret-asama-panel { animation: modulex-sss-ziyaret-asama-asamagel 0.4s ease both; }
+  .modulex-sss-ziyaret-asama-pbas { display: flex; align-items: baseline; gap: 12px; font-size: clamp(1.25rem, 2.2vw, 1.55rem); font-weight: 800; }
+  .modulex-sss-ziyaret-asama--ajs .modulex-sss-ziyaret-asama-pbas { display: none; }
+  .modulex-sss-ziyaret-asama-pno { color: --accentInk--; font-size: 0.9rem; font-variant-numeric: tabular-nums; }
+  .modulex-sss-ziyaret-asama-notlar { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 22px 32px; }
+  .modulex-sss-ziyaret-asama-not { display: grid; grid-template-columns: 30px minmax(0, 1fr); gap: 12px; align-items: start; }
+  .modulex-sss-ziyaret-asama-nikon { color: --accentInk--; font-size: 26px; }
+  .modulex-sss-ziyaret-asama-nyazi { display: grid; gap: 6px; }
+  .modulex-sss-ziyaret-asama-soru { font-size: 1.05rem; font-weight: 750; line-height: 1.4; }
+  .modulex-sss-ziyaret-asama-cevap { color: --muted--; font-size: 0.98rem; line-height: 1.7; }
+  .modulex-sss-ziyaret-asama-ileri { justify-self: end; display: inline-flex; align-items: center; gap: 8px; padding: 10px 18px; border: 1.5px solid --accent--; border-radius: 999px; background: transparent; color: --accentInk--; font: inherit; font-weight: 700; transition: background-color 0.25s ease, color 0.25s ease; }
+  .modulex-sss-ziyaret-asama-ileri:hover { background: --accent--; color: --accentText--; }
+  @keyframes modulex-sss-ziyaret-asama-asamagel { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: none; } }
+  @media (max-width: 768px) {
+    .modulex-sss-ziyaret-asama-daire { width: 42px; height: 42px; font-size: 1rem; }
+    .modulex-sss-ziyaret-asama-adimlar::before, .modulex-sss-ziyaret-asama-adimlar::after { inset-block-start: 20px; }
+    .modulex-sss-ziyaret-asama-aad { font-size: 0.86rem; }
+    .modulex-sss-ziyaret-asama-notlar { grid-template-columns: minmax(0, 1fr); }
+  }
+  .modulex-sss-ziyaret-asama-bag { display: inline-flex; align-items: center; gap: 6px; margin-block-start: 10px; color: --accentInk--; font-weight: 700; text-decoration: none; transition: gap 0.25s ease; }
+  .modulex-sss-ziyaret-asama-bag:hover { gap: 10px; text-decoration: underline; text-underline-offset: 4px; }
+  .modulex-sss-ziyaret-asama-bag .material-symbols-outlined { font-size: 18px; }
+
+  :is([lang="ar"], [lang="fa"], [lang="he"], [lang="ur"]) .modulex-sss-ziyaret-asama :is(.modulex-sss-ziyaret-asama-baslik, .modulex-sss-ziyaret-asama-ust, h3, h4, strong) { letter-spacing: 0; }
+  :is([lang="ar"], [lang="fa"], [lang="he"], [lang="ur"]) .modulex-sss-ziyaret-asama-baslik { line-height: 1.35; }
+  @media (max-width: 768px) {
+    .modulex-sss-ziyaret-asama { padding-inline: 16px; }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .modulex-sss-ziyaret-asama *, .modulex-sss-ziyaret-asama *::before, .modulex-sss-ziyaret-asama *::after { animation: none !important; transition: none !important; }
+  }
+</style>
+<script>
+  (() => {
+    const P = "modulex-sss-ziyaret-asama";
+    const az = !!(window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches);
+    const asama = (s, P) => {
+        const t = [...s.querySelectorAll("[data-asama-sekme]")];
+        if (t.length < 2) return;
+        const p = t.map((x) => document.getElementById(x.getAttribute("aria-controls")));
+        s.classList.add(P + "--ajs");
+        const sec = (i, odak) => {
+          t.forEach((x, j) => { x.setAttribute("aria-selected", String(i === j)); x.tabIndex = i === j ? 0 : -1; x.classList.toggle(P + "--gecti", j < i); });
+          p.forEach((x, j) => { if (x) x.hidden = i !== j; });
+          s.style.setProperty("--asama", String(i / (t.length - 1)));
+          if (odak) t[i].focus();
+        };
+        t.forEach((x, i) => {
+          x.addEventListener("click", () => sec(i));
+          x.addEventListener("keydown", (e) => {
+            const rtl = getComputedStyle(s).direction === "rtl";
+            let n = -1;
+            if (e.key === (rtl ? "ArrowLeft" : "ArrowRight") || e.key === "ArrowDown") n = (i + 1) % t.length;
+            else if (e.key === (rtl ? "ArrowRight" : "ArrowLeft") || e.key === "ArrowUp") n = (i - 1 + t.length) % t.length;
+            else if (e.key === "Home") n = 0;
+            else if (e.key === "End") n = t.length - 1;
+            if (n > -1) { e.preventDefault(); sec(n, true); }
+          });
+        });
+        s.querySelectorAll("[data-asama-ileri]").forEach((b) => {
+          b.hidden = false;
+          b.addEventListener("click", () => sec(Number(b.dataset.asamaIleri) || 0, true));
+        });
+        sec(0);
+      };
+    document.querySelectorAll("." + P).forEach((s) => {
+      if (s.dataset.fbHazir) return;
+      s.dataset.fbHazir = "1";
+      asama(s, P, az);
+    });
+  })();
+</script>

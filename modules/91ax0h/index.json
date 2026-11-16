@@ -1,0 +1,58 @@
+{
+  "name": "Yorum Önce/Sonra — tedavi ya da hizmet yolculuğunun iki aşaması",
+  "description": "Her yorum bir vaka satırı: başlıkta tedavi/hizmet adı (`baslik`) ve süre (`tarih`); altında soluk «öncesi» kutusu (`once` alanı) → ok → vurgulu «sonrası» kutusunda yorum; en altta kişi ve puan. Görünür olunca aşamalar sırayla gelir. `once` yoksa yalnız sonrası basılır. İki aşamalı anlatı (sorun → sonuç) tek kartta yan yana: yorum-zaman-akisi yorumları zamana dizer, burada her yorumun kendi içi öncesi/sonrası; aşama etiketleri desing dil sözlüğünden (`onceEtiket` · `sonraEtiket`). Metinler dil sözlüğü, renkler desing + var(--mx-site-*), mantıksal CSS → RTL. Veri yoksa blok basılmaz.",
+  "version": "1.0.0",
+  "icon": "compare_arrows",
+  "category": "testimonial",
+  "subCategory": "before-after",
+  "tags": [
+    "testimonial",
+    "before-after",
+    "case",
+    "story",
+    "stages",
+    "rtl",
+    "fabrika"
+  ],
+  "desing": {
+    "max": "1200px",
+    "bosluk": "clamp(56px, 8vw, 104px)",
+    "yuvarlak": "18px",
+    "ust": "",
+    "baslik": "",
+    "metin": "",
+    "bg": "var(--mx-site-bg, #ffffff)",
+    "text": "var(--mx-site-text, #111318)",
+    "muted": "color-mix(in srgb, var(--mx-site-text, #111318) 68%, var(--mx-site-bg, #ffffff))",
+    "kartBg": "var(--mx-site-surface, #f6f7f9)",
+    "cizgi": "color-mix(in srgb, var(--mx-site-text, #111318) 12%, transparent)",
+    "accent": "var(--mx-site-primary, #2563eb)",
+    "accentInk": "color-mix(in srgb, var(--mx-site-primary, #2563eb) 70%, var(--mx-site-text, #111318))",
+    "accentText": "var(--mx-site-primary-contrast, #ffffff)",
+    "vurguBg": "var(--mx-site-primary, #2563eb)",
+    "vurguText": "var(--mx-site-primary-contrast, #ffffff)",
+    "yildiz": "color-mix(in srgb, var(--mx-color-warning, #d97706) 78%, var(--mx-site-text, #111318))",
+    "onceEtiket": "",
+    "sonraEtiket": "",
+    "bgcolor": "var(--mx-site-bg, #ffffff)",
+    "color": "var(--mx-site-text, #111318)"
+  },
+  "data": [],
+  "veri": {
+    "statik": true,
+    "dinamik": false,
+    "kaynak": "data",
+    "alanlar": {
+      "metin": "yorum metni — dil sözlüğü (zorunlu)",
+      "ad": "yorumu yapanın adı",
+      "unvan": "görev / unvan (dil sözlüğü)",
+      "firma": "firma adı",
+      "puan": "1–5 yıldız (0/boş → yıldız yok)",
+      "img": "avatar / portre görseli",
+      "logo": "firma logosu (destekleyen yerleşimde)",
+      "baslik": "yorum başlığı (destekleyen yerleşimde)",
+      "tarih": "tarih metni",
+      "kaynak": "kaynak (Google, Instagram …)"
+    }
+  }
+}

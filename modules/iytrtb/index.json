@@ -1,0 +1,62 @@
+{
+  "name": "Çağrı İlk Boş Saat — kadranlı geri sayım",
+  "description": "Başlangıçta tonlu panelde analog kadran (akrep/yelkovan ilk boş saate sunucuda ayarlanır, görününce döner) ve dev saat; altında kalan süre sayfa diliyle («2 saat içinde», «in 45 minutes»). Bitişte başlık, metin, sonraki boş saat çipleri (data) ve düğmeler. Saat geçtiyse kadran bloğu gizlenir; ilkSaat yoksa yalnız metin + düğmeler. cagri-daire-dugme ve cagri-daire-gorsel daireyi düğme/fotoğraf için kullanır; bu modülde daire işlevsel bir saat kadranıdır ve çağrının konusu zaman — canlı geri sayım (Intl.RelativeTimeFormat) ailede yok. Metinler dil sözlüğü, renkler desing + var(--mx-site-*), mantıksal CSS → RTL. Başlık da düğme de yoksa blok basılmaz.",
+  "version": "1.0.0",
+  "icon": "schedule",
+  "category": "cta",
+  "subCategory": "next-slot-clock",
+  "tags": [
+    "cta",
+    "clock",
+    "countdown",
+    "availability",
+    "rtl",
+    "fabrika"
+  ],
+  "desing": {
+    "max": "1200px",
+    "bosluk": "clamp(56px, 8vw, 104px)",
+    "yuvarlak": "18px",
+    "ust": "",
+    "baslik": "",
+    "metin": "",
+    "btn1Text": "",
+    "btn1Url": "",
+    "btn2Text": "",
+    "btn2Url": "",
+    "img": "",
+    "alt": "",
+    "ikon": "",
+    "not": "",
+    "number": "",
+    "numberText": "",
+    "waLabel": "",
+    "waTitle": "",
+    "waMessage": "",
+    "hours": "",
+    "hoursLabel": "",
+    "bg": "var(--mx-site-bg, #ffffff)",
+    "yaziRenk": "var(--mx-site-text, #111318)",
+    "muted": "color-mix(in srgb, var(--mx-site-text, #111318) 68%, var(--mx-site-bg, #ffffff))",
+    "kartBg": "var(--mx-site-bg, #ffffff)",
+    "cizgi": "color-mix(in srgb, var(--mx-site-text, #111318) 12%, transparent)",
+    "accent": "var(--mx-site-primary, #2563eb)",
+    "accentInk": "color-mix(in srgb, var(--mx-site-primary, #2563eb) 70%, var(--mx-site-text, #111318))",
+    "accentText": "var(--mx-site-primary-contrast, #ffffff)",
+    "vurguBg": "var(--mx-site-primary, #2563eb)",
+    "vurguText": "var(--mx-site-primary-contrast, #ffffff)",
+    "bgcolor": "var(--mx-site-bg, #ffffff)",
+    "color": "var(--mx-site-text, #111318)"
+  },
+  "data": [],
+  "veri": {
+    "statik": true,
+    "dinamik": false,
+    "kaynak": "desing",
+    "alanlar": {
+      "ikon": "Material Symbols adı (madde)",
+      "baslik": "dil sözlüğü (madde yazısı, zorunlu)",
+      "aciklama": "dil sözlüğü (madde alt yazısı)"
+    }
+  }
+}

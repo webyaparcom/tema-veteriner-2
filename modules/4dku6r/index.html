@@ -1,0 +1,105 @@
+<section class="modulex-sayac-sube-harita{{fbsinif}}" {{fbetiket}}>
+  <div class="modulex-sayac-sube-harita-ic">
+    {{fbbas}}
+    {{fbgovde}}
+  </div>
+</section>
+
+<style>
+  /* sayac-sube-harita — sayac-eksen rakamları düz bir çizgiye, sayac-kabarcik organik kümeye dizer; bu modül konumsal bir harita + akan güzergâh + pin→panel seçim iskeletidir (harita/şube arketipi H). */
+  .modulex-sayac-sube-harita { box-sizing: border-box; width: 100%; padding: --bosluk-- 20px; background: --bg--; color: --text--; font-size: 1rem; line-height: 1.6; font-family: var(--mx-font-sans, inherit); overflow-wrap: break-word; }
+  .modulex-sayac-sube-harita *, .modulex-sayac-sube-harita *::before, .modulex-sayac-sube-harita *::after { box-sizing: border-box; }
+  /* ham/css.css «* { font-size: 14px }» kalıtımı keser — modül içinde boyut üstten gelsin (ikon yazı tipi hariç) */
+  .modulex-sayac-sube-harita :where(*:not(.material-symbols-outlined)) { font-size: inherit; }
+  /* aynı «*» kuralı font-weight 400 · line-height 1.2 · font-family de basar — modül içinde kalıtım */
+  .modulex-sayac-sube-harita :where(*:not(.material-symbols-outlined)) { font-weight: inherit; line-height: inherit; font-family: inherit; }
+  .modulex-sayac-sube-harita :where(h2, h3, h4, p, ul, ol, li, figure, blockquote, dl, dd) { margin: 0; }
+  .modulex-sayac-sube-harita :where(ul, ol) { padding: 0; list-style: none; }
+  .modulex-sayac-sube-harita img { display: block; max-width: 100%; }
+  /* <img width height> öznitelik yüksekliği CSS aspect-ratio'yu ezer — sıfır özgüllükle auto (modül sınıfının height'ı yine kazanır) */
+  :where(.modulex-sayac-sube-harita) img { height: auto; }
+  .modulex-sayac-sube-harita [hidden] { display: none !important; }
+  .modulex-sayac-sube-harita :where(a, button, summary, [data-cevir]) { cursor: pointer; }
+  .modulex-sayac-sube-harita :where(a, button, summary, [tabindex]):focus-visible { outline: 3px solid --accent--; outline-offset: 3px; }
+  .modulex-sayac-sube-harita-ic { max-width: --max--; margin-inline: auto; }
+  .modulex-sayac-sube-harita-bas { display: grid; gap: 12px; margin-block-end: clamp(32px, 4vw, 52px); }
+  .modulex-sayac-sube-harita--bassiz .modulex-sayac-sube-harita-bas { display: none; }
+  .modulex-sayac-sube-harita-ust { color: --accentInk--; font-size: 0.8rem; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; }
+  .modulex-sayac-sube-harita-baslik { font-family: var(--mx-font-heading, inherit); font-size: clamp(1.8rem, 3.4vw, 2.8rem); font-weight: 750; letter-spacing: -0.025em; line-height: 1.1; }
+  .modulex-sayac-sube-harita-metin { color: --muted--; font-size: 1.05rem; line-height: 1.7; }
+  .modulex-sayac-sube-harita-bas { max-width: 760px; }
+  .modulex-sayac-sube-harita-cta { display: flex; flex-wrap: wrap; gap: 12px; margin-block-start: 8px; }
+  .modulex-sayac-sube-harita-dugme { display: inline-flex; align-items: center; gap: 8px; min-height: 48px; padding: 12px 22px; border: 2px solid --accent--; border-radius: 999px; background: --accent--; color: --accentText--; font-weight: 700; text-decoration: none; transition: transform 0.25s ease, background 0.25s ease, color 0.25s ease; }
+  .modulex-sayac-sube-harita-dugme:hover { transform: translateY(-2px); }
+  .modulex-sayac-sube-harita-dugme--ikincil { background: transparent; color: --text--; border-color: --cizgi--; }
+  .modulex-sayac-sube-harita-dugme--ikincil:hover { border-color: --accent--; }
+  .modulex-sayac-sube-harita-dugme .material-symbols-outlined { font-size: 20px; }
+
+  .modulex-sayac-sube-harita-duzen { display: grid; grid-template-columns: minmax(0, 1.6fr) minmax(0, 1fr); gap: clamp(20px, 3vw, 36px); align-items: stretch; }
+  .modulex-sayac-sube-harita-harita { position: relative; aspect-ratio: 16 / 11; overflow: hidden; border: 1px solid --cizgi--; border-radius: --yuvarlak--; background: radial-gradient(circle at 30% 40%, color-mix(in srgb, --accent-- 16%, transparent), transparent 45%), radial-gradient(circle at 78% 72%, color-mix(in srgb, --accent-- 12%, transparent), transparent 40%), radial-gradient(color-mix(in srgb, --text-- 20%, transparent) 1.2px, transparent 1.7px) 0 0 / 18px 18px, --kartBg--; }
+  .modulex-sayac-sube-harita-hat { position: absolute; inset: 0; width: 100%; height: 100%; }
+  [dir="rtl"] .modulex-sayac-sube-harita-hat { transform: scaleX(-1); }
+  .modulex-sayac-sube-harita-yol { fill: none; stroke: color-mix(in srgb, --text-- 18%, transparent); stroke-width: 7; stroke-linecap: round; stroke-linejoin: round; vector-effect: non-scaling-stroke; }
+  .modulex-sayac-sube-harita-akis { fill: none; stroke: --accent--; stroke-width: 2.5; stroke-linecap: round; stroke-linejoin: round; stroke-dasharray: 6 10; vector-effect: non-scaling-stroke; animation: modulex-sayac-sube-harita-akis 1.2s linear infinite; }
+  @keyframes modulex-sayac-sube-harita-akis { to { stroke-dashoffset: -16; } }
+  .modulex-sayac-sube-harita-pin { position: absolute; inset-block-start: var(--y); inset-inline-start: var(--x); z-index: 2; display: grid; justify-items: center; gap: 6px; padding: 0; border: 0; background: transparent; color: --text--; font: inherit; transform: translate(var(--tx, -50%), calc(var(--b) * -19px)); }
+  [dir="rtl"] .modulex-sayac-sube-harita-pin { --tx: 50%; }
+  .modulex-sayac-sube-harita:not(.modulex-sayac-sube-harita--js) .modulex-sayac-sube-harita-pin { pointer-events: none; }
+  .modulex-sayac-sube-harita-pin-ic { position: relative; display: inline-grid; place-items: center; width: calc(var(--b) * 38px); height: calc(var(--b) * 38px); border: 2px solid --accent--; border-radius: 50%; background: --bg--; color: --accentInk--; transition: transform 0.3s ease, background 0.3s ease, color 0.3s ease; }
+  .modulex-sayac-sube-harita-pin:hover .modulex-sayac-sube-harita-pin-ic, .modulex-sayac-sube-harita-pin[aria-pressed="true"] .modulex-sayac-sube-harita-pin-ic { background: --accent--; color: --accentText--; transform: scale(1.12); }
+  .modulex-sayac-sube-harita-pin-ikon { font-size: calc(var(--b) * 20px); }
+  .modulex-sayac-sube-harita-nabiz { position: absolute; inset: -2px; border: 2px solid --accent--; border-radius: 50%; opacity: 0; pointer-events: none; }
+  .modulex-sayac-sube-harita-pin[aria-pressed="true"] .modulex-sayac-sube-harita-nabiz { animation: modulex-sayac-sube-harita-nabiz 1.8s ease-out infinite; }
+  @keyframes modulex-sayac-sube-harita-nabiz { from { transform: scale(1); opacity: 0.85; } to { transform: scale(2.3); opacity: 0; } }
+  .modulex-sayac-sube-harita-pin-yazi { padding: 2px 9px; border-radius: 999px; background: color-mix(in srgb, --bg-- 82%, transparent); font-size: 0.8rem; font-weight: 800; font-variant-numeric: tabular-nums; white-space: nowrap; }
+  .modulex-sayac-sube-harita-pin[aria-pressed="true"] .modulex-sayac-sube-harita-pin-yazi { background: --text--; color: --bg--; }
+  .modulex-sayac-sube-harita-paneller { display: grid; align-content: start; gap: 14px; }
+  .modulex-sayac-sube-harita--js .modulex-sayac-sube-harita-paneller { align-content: stretch; }
+  .modulex-sayac-sube-harita-panel { display: grid; align-content: center; gap: 10px; padding: clamp(22px, 3vw, 36px); border: 1px solid --cizgi--; border-radius: --yuvarlak--; background: --kartBg--; animation: modulex-sayac-sube-harita-gel 0.4s ease both; }
+  .modulex-sayac-sube-harita-panel-no { color: --accentInk--; font-family: var(--mx-font-mono, ui-monospace, monospace); font-size: 0.85rem; font-weight: 700; }
+  .modulex-sayac-sube-harita-sayi { font-size: clamp(2.6rem, 5vw, 4rem); font-weight: 800; font-variant-numeric: tabular-nums; letter-spacing: -0.03em; line-height: 1; }
+  .modulex-sayac-sube-harita-ek { color: --accentInk--; font-size: 0.5em; }
+  .modulex-sayac-sube-harita-etiket { display: flex; align-items: center; gap: 8px; font-size: 1.15rem; font-weight: 700; }
+  .modulex-sayac-sube-harita-ikon { color: --accentInk--; font-size: 22px; }
+  .modulex-sayac-sube-harita-not { color: --muted--; font-size: 0.95rem; }
+  @keyframes modulex-sayac-sube-harita-gel { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: none; } }
+  @media (max-width: 1024px) {
+    .modulex-sayac-sube-harita-duzen { grid-template-columns: minmax(0, 1fr); }
+  }
+  @media (max-width: 768px) {
+    .modulex-sayac-sube-harita-harita { aspect-ratio: 4 / 3.4; }
+    .modulex-sayac-sube-harita-pin-yazi { padding: 1px 6px; font-size: 0.7rem; }
+  }
+
+  :is([lang="ar"], [lang="fa"], [lang="he"], [lang="ur"]) .modulex-sayac-sube-harita :is(.modulex-sayac-sube-harita-baslik, .modulex-sayac-sube-harita-ust, h3, h4, strong) { letter-spacing: 0; }
+  :is([lang="ar"], [lang="fa"], [lang="he"], [lang="ur"]) .modulex-sayac-sube-harita-baslik { line-height: 1.35; }
+  @media (max-width: 768px) {
+    .modulex-sayac-sube-harita { padding-inline: 16px; }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .modulex-sayac-sube-harita *, .modulex-sayac-sube-harita *::before, .modulex-sayac-sube-harita *::after { animation: none !important; transition: none !important; }
+  }
+</style>
+<script>
+  (() => {
+    const P = "modulex-sayac-sube-harita";
+    const az = !!(window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches);
+    const secim = (s, P) => {
+        const c = [...s.querySelectorAll("[data-sec]")];
+        const p = [...s.querySelectorAll("[data-secim]")];
+        if (!c.length) return;
+        s.classList.add(P + "--js");
+        const sec = (n) => {
+          c.forEach((x) => x.setAttribute("aria-pressed", String(x.dataset.sec === n)));
+          p.forEach((x) => { x.hidden = x.dataset.secim !== n; });
+        };
+        sec(c[0].dataset.sec);
+        c.forEach((x) => x.addEventListener("click", () => sec(x.dataset.sec)));
+      };
+    document.querySelectorAll("." + P).forEach((s) => {
+      if (s.dataset.fbHazir) return;
+      s.dataset.fbHazir = "1";
+      secim(s, P, az);
+    });
+  })();
+</script>

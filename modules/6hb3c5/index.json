@@ -1,0 +1,32 @@
+{
+  "name": "Menu Slider",
+  "data": [
+    {
+      "img": "1.jpg"
+    },
+    {
+      "img": "2.jpg"
+    },
+    {
+      "img": "3.jpg"
+    }
+  ],
+  "desing": {
+    "bgcolor": "#1e3046",
+    "color": "#ffffff",
+    "activebgcolor": "#ffffff",
+    "activecolor": "#000000",
+    "delay": 5000,
+    "margin": "0px",
+    "logo-height": "200px"
+  },
+  "category": "menu",
+  "description": "Menu-2 ve Slider modüllerinin birleşimi. Menü navigasyonu ve altında otomatik geçişli slider içerir. Mobil uyumlu hamburger menü ve dil seçici özellikleri vardır.",
+  "version": "1.0.0",
+  "icon": "menu",
+  "veri": {
+    "statik": true,
+    "dinamik": false,
+    "kaynak": "desing/data"
+  }
+}

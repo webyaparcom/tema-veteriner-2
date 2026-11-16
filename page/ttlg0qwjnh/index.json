@@ -1,0 +1,40 @@
+{
+  "id": "ttlg0qwjnh",
+  "name": {
+    "tr": "Ziyaret rehberi",
+    "en": "Visit guide",
+    "ar": "دليل الزيارة"
+  },
+  "description": {
+    "tr": "Merak edilenler ve kısa yanıtlar.",
+    "en": "Common questions and short answers.",
+    "ar": "أسئلة متكررة وإجابات موجزة."
+  },
+  "keyword": {
+    "tr": "sss, soru cevap",
+    "en": "faq, questions",
+    "ar": "أسئلة وأجوبة"
+  },
+  "path": "sorular",
+  "icon": "help",
+  "category": "",
+  "status": "play",
+  "desing": {
+    "header": [],
+    "body": [
+      "fmsgqi",
+      "iytrtb"
+    ],
+    "footer": []
+  },
+  "index": 3,
+  "url": "",
+  "text": {},
+  "title": {
+    "tr": "Ziyaret rehberi",
+    "en": "Visit guide",
+    "ar": "دليل الزيارة"
+  },
+  "date": "2026-11-16T11:43:51.415Z",
+  "update": "2026-11-16T11:47:24.838Z"
+}

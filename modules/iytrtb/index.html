@@ -1,0 +1,116 @@
+<section class="modulex-cagri-ilk-bos-saat{{fbsinif}}" {{fbetiket}}>
+  <div class="modulex-cagri-ilk-bos-saat-ic">
+    {{fbbas}}
+    {{fbgovde}}
+  </div>
+</section>
+
+<style>
+  /* cagri-ilk-bos-saat — cagri-daire-dugme ve cagri-daire-gorsel daireyi düğme/fotoğraf için kullanır; bu modülde daire işlevsel bir saat kadranıdır ve çağrının konusu zaman — canlı geri sayım (Intl.RelativeTimeFormat) ailede yok. */
+  .modulex-cagri-ilk-bos-saat { box-sizing: border-box; width: 100%; padding: --bosluk-- 20px; background: --bg--; color: --yaziRenk--; font-size: 1rem; line-height: 1.6; font-family: var(--mx-font-sans, inherit); overflow-wrap: break-word; }
+  .modulex-cagri-ilk-bos-saat *, .modulex-cagri-ilk-bos-saat *::before, .modulex-cagri-ilk-bos-saat *::after { box-sizing: border-box; }
+  /* ham/css.css «* { font-size: 14px }» kalıtımı keser — modül içinde boyut üstten gelsin (ikon yazı tipi hariç) */
+  .modulex-cagri-ilk-bos-saat :where(*:not(.material-symbols-outlined)) { font-size: inherit; }
+  /* aynı «*» kuralı font-weight 400 · line-height 1.2 · font-family de basar — modül içinde kalıtım */
+  .modulex-cagri-ilk-bos-saat :where(*:not(.material-symbols-outlined)) { font-weight: inherit; line-height: inherit; font-family: inherit; }
+  .modulex-cagri-ilk-bos-saat :where(h2, h3, h4, p, ul, ol, li, figure, blockquote, dl, dd) { margin: 0; }
+  .modulex-cagri-ilk-bos-saat :where(ul, ol) { padding: 0; list-style: none; }
+  .modulex-cagri-ilk-bos-saat img { display: block; max-width: 100%; }
+  /* <img width height> öznitelik yüksekliği CSS aspect-ratio'yu ezer — sıfır özgüllükle auto (modül sınıfının height'ı yine kazanır) */
+  :where(.modulex-cagri-ilk-bos-saat) img { height: auto; }
+  .modulex-cagri-ilk-bos-saat [hidden] { display: none !important; }
+  .modulex-cagri-ilk-bos-saat :where(a, button, summary, [data-cevir]) { cursor: pointer; }
+  .modulex-cagri-ilk-bos-saat :where(a, button, summary, [tabindex]):focus-visible { outline: 3px solid --accent--; outline-offset: 3px; }
+  .modulex-cagri-ilk-bos-saat-ic { max-width: --max--; margin-inline: auto; }
+  .modulex-cagri-ilk-bos-saat-bas { display: grid; gap: 12px; margin-block-end: clamp(32px, 4vw, 52px); }
+  .modulex-cagri-ilk-bos-saat--bassiz .modulex-cagri-ilk-bos-saat-bas { display: none; }
+  .modulex-cagri-ilk-bos-saat-ust { color: --accentInk--; font-size: 0.8rem; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; }
+  .modulex-cagri-ilk-bos-saat-baslik { font-family: var(--mx-font-heading, inherit); font-size: clamp(1.8rem, 3.4vw, 2.8rem); font-weight: 750; letter-spacing: -0.025em; line-height: 1.1; }
+  .modulex-cagri-ilk-bos-saat-metin { color: --muted--; font-size: 1.05rem; line-height: 1.7; }
+  .modulex-cagri-ilk-bos-saat-cta { display: flex; flex-wrap: wrap; gap: 12px; margin-block-start: 8px; }
+  .modulex-cagri-ilk-bos-saat-dugme { display: inline-flex; align-items: center; gap: 8px; min-height: 48px; padding: 12px 22px; border: 2px solid --accent--; border-radius: 999px; background: --accent--; color: --accentText--; font-weight: 700; text-decoration: none; transition: transform 0.25s ease, background 0.25s ease, color 0.25s ease; }
+  .modulex-cagri-ilk-bos-saat-dugme:hover { transform: translateY(-2px); }
+  .modulex-cagri-ilk-bos-saat-dugme--ikincil { background: transparent; color: --yaziRenk--; border-color: --cizgi--; }
+  .modulex-cagri-ilk-bos-saat-dugme--ikincil:hover { border-color: --accent--; }
+  .modulex-cagri-ilk-bos-saat-dugme .material-symbols-outlined { font-size: 20px; }
+
+  .modulex-cagri-ilk-bos-saat-duzen { display: grid; grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr); gap: clamp(28px, 5vw, 72px); align-items: center; }
+  .modulex-cagri-ilk-bos-saat-duzen--tek { grid-template-columns: minmax(0, 1fr); max-width: 760px; }
+  .modulex-cagri-ilk-bos-saat-saat-blok { display: grid; justify-items: center; gap: 18px; padding: clamp(28px, 4vw, 48px) 20px; border-radius: --yuvarlak--; background: color-mix(in srgb, --accent-- 10%, --bg--); text-align: center; }
+  .modulex-cagri-ilk-bos-saat--gecti .modulex-cagri-ilk-bos-saat-saat-blok { display: none; }
+  .modulex-cagri-ilk-bos-saat--gecti .modulex-cagri-ilk-bos-saat-duzen { grid-template-columns: minmax(0, 1fr); }
+  .modulex-cagri-ilk-bos-saat-kadran { position: relative; width: clamp(150px, 18vw, 210px); aspect-ratio: 1; border-radius: 50%; background: repeating-conic-gradient(from -1.5deg, --accent-- 0 3deg, transparent 3deg 30deg); box-shadow: 0 24px 40px -28px color-mix(in srgb, --yaziRenk-- 60%, transparent); }
+  .modulex-cagri-ilk-bos-saat-kadran::before { content: ""; position: absolute; inset: 9px; border-radius: 50%; background: --kartBg--; }
+  .modulex-cagri-ilk-bos-saat-akrep, .modulex-cagri-ilk-bos-saat-yelkovan { position: absolute; inset-block-end: 50%; border-radius: 6px; transform-origin: 50% 100%; animation: modulex-cagri-ilk-bos-saat-kur 1.4s cubic-bezier(0.2, 0.7, 0.2, 1) both; }
+  .modulex-cagri-ilk-bos-saat-akrep { inset-inline-start: calc(50% - 3px); width: 6px; height: 25%; background: --yaziRenk--; transform: rotate(var(--akrep)); }
+  .modulex-cagri-ilk-bos-saat-yelkovan { inset-inline-start: calc(50% - 2px); width: 4px; height: 36%; background: --accent--; transform: rotate(var(--yelkovan)); }
+  .modulex-cagri-ilk-bos-saat-merkez { position: absolute; inset: calc(50% - 7px); border-radius: 50%; background: --accent--; }
+  .modulex-cagri-ilk-bos-saat-zaman { display: grid; gap: 4px; }
+  .modulex-cagri-ilk-bos-saat-zetk { color: --accentInk--; font-size: 0.82rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; }
+  .modulex-cagri-ilk-bos-saat-zdeger { font-family: var(--mx-font-heading, inherit); font-size: clamp(2.6rem, 6vw, 4.4rem); font-weight: 800; letter-spacing: -0.03em; line-height: 1; font-variant-numeric: tabular-nums; }
+  .modulex-cagri-ilk-bos-saat-kalan { color: --muted--; font-weight: 600; }
+  .modulex-cagri-ilk-bos-saat-yazi { display: grid; gap: 14px; }
+  .modulex-cagri-ilk-bos-saat-sonraki { display: grid; gap: 8px; }
+  .modulex-cagri-ilk-bos-saat-sbas { color: --muted--; font-size: 0.85rem; font-weight: 700; }
+  .modulex-cagri-ilk-bos-saat-cipler { display: flex; flex-wrap: wrap; gap: 8px; }
+  .modulex-cagri-ilk-bos-saat-cip { display: inline-flex; align-items: center; gap: 6px; padding: 8px 14px; border: 1px solid --cizgi--; border-radius: 999px; background: --kartBg--; font-variant-numeric: tabular-nums; transition: border-color 0.25s ease; }
+  .modulex-cagri-ilk-bos-saat-cip:hover { border-color: --accent--; }
+  .modulex-cagri-ilk-bos-saat-cip small { color: --muted--; }
+  .modulex-cagri-ilk-bos-saat-cikon { color: --accentInk--; font-size: 18px; }
+  @keyframes modulex-cagri-ilk-bos-saat-kur { from { transform: rotate(0deg); } }
+  @media (max-width: 768px) {
+    .modulex-cagri-ilk-bos-saat-duzen { grid-template-columns: minmax(0, 1fr); }
+  }
+  .modulex-cagri-ilk-bos-saat-wasvg { width: 1.25em; height: 1.25em; flex: none; }
+  .modulex-cagri-ilk-bos-saat-maddeler { display: grid; gap: 12px; }
+  .modulex-cagri-ilk-bos-saat-madde { display: flex; align-items: flex-start; gap: 12px; }
+  .modulex-cagri-ilk-bos-saat-mikon { flex: none; color: --accentInk--; font-size: 24px; }
+  .modulex-cagri-ilk-bos-saat-myazi { display: grid; gap: 2px; }
+  .modulex-cagri-ilk-bos-saat-myazi strong { font-weight: 700; }
+  .modulex-cagri-ilk-bos-saat-myazi small { color: --muted--; font-size: 0.92rem; }
+  .modulex-cagri-ilk-bos-saat-not { color: --muted--; font-size: 0.9rem; }
+  .modulex-cagri-ilk-bos-saat-saat { display: flex; align-items: center; gap: 8px; color: --muted--; font-size: 0.95rem; }
+  .modulex-cagri-ilk-bos-saat-saat .material-symbols-outlined { font-size: 20px; color: --accentInk--; }
+  .modulex-cagri-ilk-bos-saat-metin { max-width: 62ch; }
+
+  :is([lang="ar"], [lang="fa"], [lang="he"], [lang="ur"]) .modulex-cagri-ilk-bos-saat :is(.modulex-cagri-ilk-bos-saat-baslik, .modulex-cagri-ilk-bos-saat-ust, h3, h4, strong) { letter-spacing: 0; }
+  :is([lang="ar"], [lang="fa"], [lang="he"], [lang="ur"]) .modulex-cagri-ilk-bos-saat-baslik { line-height: 1.35; }
+  @media (max-width: 768px) {
+    .modulex-cagri-ilk-bos-saat { padding-inline: 16px; }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .modulex-cagri-ilk-bos-saat *, .modulex-cagri-ilk-bos-saat *::before, .modulex-cagri-ilk-bos-saat *::after { animation: none !important; transition: none !important; }
+  }
+</style>
+<script>
+  (() => {
+    const P = "modulex-cagri-ilk-bos-saat";
+    const az = !!(window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches);
+    const bosSaat = (s, P) => {
+        const e = s.querySelector("[data-bos-saat]");
+        const yaz = s.querySelector("[data-bos-kalan]");
+        if (!e || !yaz) return;
+        const m = /^(?:(\d{4})-(\d{2})-(\d{2})[T ])?(\d{1,2}):(\d{2})$/.exec(String(e.dataset.bosSaat || "").trim());
+        if (!m) return;
+        const hedef = new Date();
+        if (m[1]) hedef.setFullYear(+m[1], +m[2] - 1, +m[3]);
+        hedef.setHours(+m[4], +m[5], 0, 0);
+        let rf = null;
+        try { rf = new Intl.RelativeTimeFormat(document.documentElement.lang || undefined, { numeric: "auto" }); } catch (x) { rf = null; }
+        const tur = () => {
+          const dk = Math.ceil((hedef.getTime() - Date.now()) / 60000);
+          if (dk < 0) { yaz.hidden = true; s.classList.add(P + "--gecti"); return false; }
+          if (!rf) return false;
+          yaz.hidden = false;
+          yaz.textContent = dk >= 120 ? rf.format(Math.round(dk / 60), "hour") : rf.format(dk, "minute");
+          return true;
+        };
+        if (tur()) { const z = setInterval(() => { if (!tur()) clearInterval(z); }, 30000); }
+      };
+    document.querySelectorAll("." + P).forEach((s) => {
+      if (s.dataset.fbHazir) return;
+      s.dataset.fbHazir = "1";
+      bosSaat(s, P, az);
+    });
+  })();
+</script>
