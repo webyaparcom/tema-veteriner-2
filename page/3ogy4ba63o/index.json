@@ -3,17 +3,23 @@
   "name": {
     "tr": "Randevu",
     "en": "Appointment",
-    "ar": "موعد"
+    "ar": "موعد",
+    "de": "Termin",
+    "ru": "Запись"
   },
   "description": {
     "tr": "Randevu talep formu (demo).",
     "en": "Appointment request form (demo).",
-    "ar": "نموذج طلب موعد (تجريبي)."
+    "ar": "نموذج طلب موعد (تجريبي).",
+    "de": "Terminanfrage-Formular (Demo).",
+    "ru": "Форма заявки на запись (демо)."
   },
   "keyword": {
     "tr": "veteriner randevu",
     "en": "vet appointment",
-    "ar": "موعد بيطري"
+    "ar": "موعد بيطري",
+    "de": "Tierarzttermin",
+    "ru": "запись к ветеринару"
   },
   "path": "teklif-al",
   "icon": "request_quote",
@@ -33,7 +39,9 @@
   "title": {
     "tr": "Randevu",
     "en": "Appointment",
-    "ar": "موعد"
+    "ar": "موعد",
+    "de": "Termin",
+    "ru": "Запись"
   },
   "date": "2026-11-16T11:43:51.420Z",
   "update": "2026-11-16T11:47:24.841Z"

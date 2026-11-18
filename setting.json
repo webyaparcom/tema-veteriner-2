@@ -4,12 +4,16 @@
   "description": {
     "tr": "Kumru Veteriner Kliniği: kedi ve köpekler için muayene, aşı takvimi ve kontrol randevuları. Demo site; içerik kurgusaldır.",
     "en": "Kumru Veterinary Clinic: check-ups, vaccination schedules and follow-up visits for cats and dogs. Demo site; content is fictional.",
-    "ar": "عيادة كومرو البيطرية: فحوص وجداول تطعيم ومواعيد متابعة للقطط والكلاب. موقع تجريبي؛ المحتوى افتراضي."
+    "ar": "عيادة كومرو البيطرية: فحوص وجداول تطعيم ومواعيد متابعة للقطط والكلاب. موقع تجريبي؛ المحتوى افتراضي.",
+    "de": "Kumru Veteriner Kliniği: Untersuchung, Impfkalender und Kontrolltermine für Katzen und Hunde. Demo-Website; Inhalte sind fiktiv.",
+    "ru": "Kumru Veteriner Kliniği: осмотр, календарь прививок и контрольные приёмы для кошек и собак. Демо-сайт; содержимое вымышленное."
   },
   "keyword": {
     "tr": "veteriner, kedi aşısı, köpek aşısı, veteriner randevu",
     "en": "vet, cat vaccine, dog vaccine, vet appointment",
-    "ar": "طبيب بيطري، لقاح القطط، لقاح الكلاب، موعد بيطري"
+    "ar": "طبيب بيطري، لقاح القطط، لقاح الكلاب، موعد بيطري",
+    "de": "Tierarzt, Katzenimpfung, Hundeimpfung, Tierarzttermin",
+    "ru": "ветеринар, прививка кошкам, прививка собакам, запись к ветеринару"
   },
   "category": "Kurumsal",
   "name": "Kumru Veteriner Kliniği",
@@ -18,15 +22,27 @@
     "tr": true,
     "en": true,
     "ar": true,
-    "de": false,
-    "ru": false,
+    "de": true,
+    "ru": true,
     "es": false,
     "fr": false,
     "it": false,
     "ja": false,
     "zh": false,
     "ko": false,
-    "pt": false
+    "pt": false,
+    "fa": false,
+    "he": false,
+    "ur": false,
+    "nl": false,
+    "pl": false,
+    "uk": false,
+    "az": false,
+    "ka": false,
+    "el": false,
+    "bg": false,
+    "ro": false,
+    "hi": false
   },
   "logo": "logo.png",
   "multi": false,

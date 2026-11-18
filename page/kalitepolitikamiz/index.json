@@ -3,17 +3,23 @@
   "name": {
     "tr": "Kalite Politikamız",
     "en": "Quality Policy",
-    "ar": "سياسة الجودة"
+    "ar": "سياسة الجودة",
+    "de": "Qualitätspolitik",
+    "ru": "Политика качества"
   },
   "description": {
     "tr": "Kalite politikamız",
     "en": "Our quality policy",
-    "ar": "سياسة الجودة لدينا"
+    "ar": "سياسة الجودة لدينا",
+    "de": "Unsere Qualitätspolitik",
+    "ru": "Наша политика качества"
   },
   "keyword": {
     "tr": "Kalite Politikamız",
     "en": "quality policy, quality, continuous improvement",
-    "ar": "سياسة الجودة, الجودة, التحسين المستمر"
+    "ar": "سياسة الجودة, الجودة, التحسين المستمر",
+    "de": "Qualitätspolitik",
+    "ru": "Политика качества"
   },
   "path": "kalitepolitikamiz",
   "icon": "verified",
@@ -29,12 +35,16 @@
   "text": {
     "tr": "<h2>Kalite Politikamız</h2>\n<p>Ayrı bekleme alanları, her hastadan sonra dezenfekte edilen masa ve yazılı aşı takvimi.</p>",
     "en": "<h2>Our quality policy</h2>\n<p>Separate waiting areas, a table disinfected after every patient and a written vaccination schedule.</p>",
-    "ar": "<h2>سياسة الجودة لدينا</h2>\n<p>مناطق انتظار منفصلة، وطاولة تُعقَّم بعد كل حالة، وجدول تطعيم مكتوب.</p>"
+    "ar": "<h2>سياسة الجودة لدينا</h2>\n<p>مناطق انتظار منفصلة، وطاولة تُعقَّم بعد كل حالة، وجدول تطعيم مكتوب.</p>",
+    "de": "<h2>Unsere Qualitätspolitik</h2>\n<p>Getrennte Wartebereiche, nach jedem Patienten desinfizierte Untersuchungstische und ein schriftlicher Impfkalender.</p>",
+    "ru": "<h2>Наша политика качества</h2>\n<p>Раздельные зоны ожидания, стол, дезинфицируемый после каждого пациента, и письменный календарь прививок.</p>"
   },
   "title": {
     "tr": "Kalite Politikamız",
     "en": "Quality Policy",
-    "ar": "سياسة الجودة"
+    "ar": "سياسة الجودة",
+    "de": "Qualitätspolitik",
+    "ru": "Политика качества"
   },
   "date": "2026-11-16T11:43:51.274Z",
   "update": "2026-11-16T11:47:24.850Z",
