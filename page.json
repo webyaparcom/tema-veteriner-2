@@ -5,12 +5,16 @@
       "name": {
         "tr": "Hizmetlerimiz",
         "en": "Our services",
-        "ar": "خدماتنا"
+        "ar": "خدماتنا",
+        "de": "Unsere Dienste",
+        "ru": "Наши услуги"
       },
       "description": {
         "tr": "Her hayvan muayeneyle değerlendirilir; aşağıdaki başlıklar genel bilgilendirme içindir.",
         "en": "Every animal is assessed by examination; the headings below are general information.",
-        "ar": "يُقيَّم كل حيوان بالفحص؛ والعناوين أدناه للمعلومات العامة."
+        "ar": "يُقيَّم كل حيوان بالفحص؛ والعناوين أدناه للمعلومات العامة.",
+        "de": "Jedes Tier wird per Untersuchung beurteilt; die Themen unten dienen der allgemeinen Information.",
+        "ru": "Каждое животное оценивается по результатам осмотра; разделы ниже носят общий информационный характер."
       },
       "path": "hizmetler",
       "icon": "work",
@@ -30,7 +34,9 @@
       "name": {
         "tr": "Kliniğimiz",
         "en": "Our clinic",
-        "ar": "عيادتنا"
+        "ar": "عيادتنا",
+        "de": "Unsere Klinik",
+        "ru": "Наша клиника"
       },
       "status": "play",
       "id": "hakkimizda",
@@ -51,7 +57,9 @@
       "description": {
         "tr": "Klinik alanlarımız ve örnek ziyaretler (kurgusal).",
         "en": "Our clinic areas and sample visits (fictional).",
-        "ar": "مرافق عيادتنا وزيارات نموذجية (افتراضية)."
+        "ar": "مرافق عيادتنا وزيارات نموذجية (افتراضية).",
+        "de": "Unsere Klinikbereiche und Beispielbesuche (fiktiv).",
+        "ru": "Наши клинические зоны и примеры визитов (вымышленные)."
       }
     },
     {
@@ -59,12 +67,16 @@
       "name": {
         "tr": "Veteriner hekimler",
         "en": "Our vets",
-        "ar": "الأطباء البيطريون"
+        "ar": "الأطباء البيطريون",
+        "de": "Unsere Tierärzte",
+        "ru": "Наши ветеринары"
       },
       "description": {
         "tr": "Sizi karşılayan çalışanlarımız.",
         "en": "The staff who welcomes you.",
-        "ar": "الموظفون الذين يستقبلونكم."
+        "ar": "الموظفون الذين يستقبلونكم.",
+        "de": "Unsere Mitarbeiter, die Sie empfangen.",
+        "ru": "Наши сотрудники, которые вас встретят."
       },
       "path": "ekip",
       "icon": "groups",
@@ -85,12 +97,16 @@
       "name": {
         "tr": "Ziyaret rehberi",
         "en": "Visit guide",
-        "ar": "دليل الزيارة"
+        "ar": "دليل الزيارة",
+        "de": "Besuch",
+        "ru": "Посещение"
       },
       "description": {
         "tr": "Merak edilenler ve kısa yanıtlar.",
         "en": "Common questions and short answers.",
-        "ar": "أسئلة متكررة وإجابات موجزة."
+        "ar": "أسئلة متكررة وإجابات موجزة.",
+        "de": "Was Sie wissen möchten, in kurzen Antworten.",
+        "ru": "Что интересует читателей — в коротких ответах."
       },
       "path": "sorular",
       "icon": "help",
@@ -111,12 +127,16 @@
       "name": {
         "tr": "Randevu",
         "en": "Appointment",
-        "ar": "موعد"
+        "ar": "موعد",
+        "de": "Termin",
+        "ru": "Запись"
       },
       "description": {
         "tr": "Randevu talep formu (demo).",
         "en": "Appointment request form (demo).",
-        "ar": "نموذج طلب موعد (تجريبي)."
+        "ar": "نموذج طلب موعد (تجريبي).",
+        "de": "Terminanfrage-Formular (Demo).",
+        "ru": "Форма заявки на запись (демо)."
       },
       "path": "teklif-al",
       "icon": "request_quote",
@@ -136,7 +156,9 @@
       "name": {
         "tr": "İletişim",
         "en": "Contact",
-        "ar": "اتصل بنا"
+        "ar": "اتصل بنا",
+        "de": "Kontakt",
+        "ru": "Контакты"
       },
       "status": "play",
       "id": "iletisim",
@@ -157,7 +179,9 @@
       "description": {
         "tr": "Adres, telefon ve çalışma saatleri.",
         "en": "Address, phone and opening hours.",
-        "ar": "العنوان والهاتف وساعات العمل."
+        "ar": "العنوان والهاتف وساعات العمل.",
+        "de": "Adresse, Telefon und Öffnungszeiten.",
+        "ru": "Адрес, телефон и часы работы."
       }
     }
   ],

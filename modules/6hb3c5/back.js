@@ -45,7 +45,7 @@ langhtml += typeof wmLangLi === "function" ? wmLangLi(key, langUrl, { style: "fl
   var backimglist = "";
   for (var i = 0; i < json.data.length; i++) {
     var loadingAttr = i === 0 ? "" : 'loading="lazy"';
-    backimglist += `<div class="swiper-slide"><img ${loadingAttr} src="/img/${json.id}/${json.data[i]["img"]}?v=${Date.now()}" alt="{{web-name}}" /></div>`;
+    backimglist += `<div class="swiper-slide"><img ${loadingAttr} src="/img/${json.id}/${json.data[i]["img"]}?v={{random}}" alt="{{web-name}}" /></div>`;
   }
   html = html.replace(new RegExp("{{imglist}}", "g"), backimglist);
 } catch (error) {

@@ -3,17 +3,23 @@
   "name": {
     "tr": "Vizyon",
     "en": "Vision",
-    "ar": "الرؤية"
+    "ar": "الرؤية",
+    "de": "Vision",
+    "ru": "Видение"
   },
   "description": {
     "tr": "Vizyonumuz",
     "en": "Our vision",
-    "ar": "رؤيتنا"
+    "ar": "رؤيتنا",
+    "de": "Unsere Vision",
+    "ru": "Наше видение"
   },
   "keyword": {
     "tr": "Vizyon",
     "en": "vision, our vision, goals",
-    "ar": "الرؤية, رؤيتنا, الأهداف"
+    "ar": "الرؤية, رؤيتنا, الأهداف",
+    "de": "Vision",
+    "ru": "Видение"
   },
   "path": "vizyon",
   "icon": "visibility",
@@ -29,12 +35,16 @@
   "text": {
     "tr": "<h2>Vizyonumuz</h2>\n<p>Mahallenin aşı ve kontrol takvimini güvenle emanet ettiği klinik olmak.</p>",
     "en": "<h2>Our vision</h2>\n<p>To be the clinic the neighbourhood trusts with its vaccination and check-up schedules.</p>",
-    "ar": "<h2>رؤيتنا</h2>\n<p>أن نكون العيادة التي يثق بها الحيّ في جداول التطعيم والمتابعة.</p>"
+    "ar": "<h2>رؤيتنا</h2>\n<p>أن نكون العيادة التي يثق بها الحيّ في جداول التطعيم والمتابعة.</p>",
+    "de": "<h2>Unsere Vision</h2>\n<p>Die Klinik zu sein, der die Nachbarschaft ihren Impf- und Kontrollkalender vertrauensvoll anvertraut.</p>",
+    "ru": "<h2>Наше видение</h2>\n<p>Быть клиникой, которой район с доверием поручает свой календарь прививок и осмотров.</p>"
   },
   "title": {
     "tr": "Vizyon",
     "en": "Vision",
-    "ar": "الرؤية"
+    "ar": "الرؤية",
+    "de": "Vision",
+    "ru": "Видение"
   },
   "date": "2026-11-16T11:43:51.274Z",
   "update": "2026-11-16T11:47:24.849Z",

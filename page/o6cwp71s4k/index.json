@@ -3,17 +3,23 @@
   "name": {
     "tr": "Hizmetlerimiz",
     "en": "Our services",
-    "ar": "خدماتنا"
+    "ar": "خدماتنا",
+    "de": "Unsere Dienste",
+    "ru": "Наши услуги"
   },
   "description": {
     "tr": "Her hayvan muayeneyle değerlendirilir; aşağıdaki başlıklar genel bilgilendirme içindir.",
     "en": "Every animal is assessed by examination; the headings below are general information.",
-    "ar": "يُقيَّم كل حيوان بالفحص؛ والعناوين أدناه للمعلومات العامة."
+    "ar": "يُقيَّم كل حيوان بالفحص؛ والعناوين أدناه للمعلومات العامة.",
+    "de": "Jedes Tier wird per Untersuchung beurteilt; die Themen unten dienen der allgemeinen Information.",
+    "ru": "Каждое животное оценивается по результатам осмотра; разделы ниже носят общий информационный характер."
   },
   "keyword": {
     "tr": "Hizmetler",
     "en": "Services",
-    "ar": "الخدمات"
+    "ar": "الخدمات",
+    "de": "Leistungen",
+    "ru": "Услуги"
   },
   "path": "hizmetler",
   "icon": "work",
@@ -33,7 +39,9 @@
   "title": {
     "tr": "Hizmetlerimiz",
     "en": "Our services",
-    "ar": "خدماتنا"
+    "ar": "خدماتنا",
+    "de": "Unsere Dienste",
+    "ru": "Наши услуги"
   },
   "date": "2026-11-16T11:43:51.401Z",
   "update": "2026-11-16T11:47:24.828Z"
