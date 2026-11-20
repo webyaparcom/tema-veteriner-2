@@ -1,4 +1,4 @@
-:root{--mx-site-primary:#3D5A80;--mx-site-primary-contrast:#FFFFFF;--mx-site-bg:#F5F7FA;--mx-site-text:#14202E;--mx-site-surface:#FFFFFF;--mx-site-surface-2:#EFF2F5;--mx-font-sans:"Nunito", Rubik, system-ui, -apple-system, "Segoe UI", sans-serif;--mx-font-heading:"Poppins", Rubik, system-ui, -apple-system, "Segoe UI", sans-serif;--mx-radius-sm:7px;--mx-radius-md:12px;--mx-radius-lg:17px;--mx-radius-xl:23px}@media (prefers-color-scheme:dark){:root:not([data-mx-scheme="light"]){--mx-site-primary:#587192;--mx-site-primary-contrast:#0E1116;--mx-site-bg:#0E1116;--mx-site-text:#F0EEEA;--mx-site-surface:#161A21;--mx-site-surface-2:#1B2029;color-scheme:dark}}html[data-mx-scheme="dark"]{--mx-site-primary:#587192;--mx-site-primary-contrast:#0E1116;--mx-site-bg:#0E1116;--mx-site-text:#F0EEEA;--mx-site-surface:#161A21;--mx-site-surface-2:#1B2029;color-scheme:dark}body{background:var(--mx-site-bg,#fff);color:var(--mx-site-text,inherit)}html[lang="ar"]{--mx-font-sans:"IBM Plex Sans Arabic", Rubik, system-ui, -apple-system, "Segoe UI", sans-serif;--mx-font-heading:"Noto Kufi Arabic", Rubik, system-ui, -apple-system, "Segoe UI", sans-serif}
+:root{--mx-site-primary:#3D5A80;--mx-site-primary-contrast:#FFFFFF;--mx-site-bg:#F5F7FA;--mx-site-text:#14202E;--mx-site-surface:#FFFFFF;--mx-site-surface-2:#EFF2F5;--mx-font-sans:"Nunito", Rubik, system-ui, -apple-system, "Segoe UI", sans-serif;--mx-font-heading:"Poppins", Rubik, system-ui, -apple-system, "Segoe UI", sans-serif;--mx-radius-sm:7px;--mx-radius-md:12px;--mx-radius-lg:17px;--mx-radius-xl:23px}@media (prefers-color-scheme:dark){:root:not([data-mx-scheme="light"]){--mx-site-primary:#587192;--mx-site-primary-contrast:#ffffff;--mx-site-bg:#0E1116;--mx-site-text:#F0EEEA;--mx-site-surface:#161A21;--mx-site-surface-2:#1B2029;color-scheme:dark}}html[data-mx-scheme="dark"]{--mx-site-primary:#587192;--mx-site-primary-contrast:#ffffff;--mx-site-bg:#0E1116;--mx-site-text:#F0EEEA;--mx-site-surface:#161A21;--mx-site-surface-2:#1B2029;color-scheme:dark}body{background:var(--mx-site-bg,#fff);color:var(--mx-site-text,inherit)}html[lang="ar"]{--mx-font-sans:"IBM Plex Sans Arabic", Rubik, system-ui, -apple-system, "Segoe UI", sans-serif;--mx-font-heading:"Noto Kufi Arabic", Rubik, system-ui, -apple-system, "Segoe UI", sans-serif}
 
   
   :root {
@@ -874,6 +874,10 @@
   .f0000-moduleimg > img {
     width: 100%;
     max-width: 250px;
+    
+    height: auto;
+    object-fit: contain;
+    flex-shrink: 0;
     filter: drop-shadow(0 4px 12px rgba(0, 0, 0, 0.2));
     transition: transform 0.3s ease;
   }
