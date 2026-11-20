@@ -28,6 +28,10 @@
   .modulex-moduleimg > img {
     width: 100%;
     max-width: --imgwidth--;
+    /* 20 Kas 2026: logo oranı koruması (rapor ARASTIRMA-FOOTER-KOYU § 1) — kutu daralırsa basılmaz, sığdırılır */
+    height: auto;
+    object-fit: contain;
+    flex-shrink: 0;
     filter: drop-shadow(0 4px 12px rgba(0, 0, 0, 0.2));
     transition: transform 0.3s ease;
   }
